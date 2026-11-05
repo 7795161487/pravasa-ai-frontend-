@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, 'Nirmala UI', 'Tunga', 'Segoe UI', sans-serif;
+    background: #f5f5f0;
+    color: #1a1a1a;
+    margin: 0;
+  }
+  .font-kannada {
+    font-family: 'Nirmala UI', 'Tunga', 'Segoe UI', sans-serif;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f0f0eb; }
+  ::-webkit-scrollbar-thumb { background: #2d6a4f; border-radius: 4px; }
+}
+
+@layer components {
+  /* Navbar */
+  .navbar-link {
+    @apply px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded transition-all duration-150;
+  }
+  .navbar-link.active {
+    @apply text-white border-b-2 border-white rounded-none;
+  }
+
+  /* Cards */
+  .dest-card {
+    @apply bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 cursor-pointer;
+  }
+
+  /* Buttons */
+  .btn-green {
+    @apply bg-[#1a3d2e] hover:bg-[#145236] text-white font-semibold rounded-lg transition-all duration-150;
+  }
+  .btn-orange {
+    @apply bg-[#e8732a] hover:bg-[#d4621f] text-white font-semibold rounded-lg transition-all duration-150;
+  }
+  .btn-outline {
+    @apply bg-white hover:bg-gray-50 text-[#1a3d2e] border border-[#1a3d2e] font-semibold rounded-lg transition-all duration-150;
+  }
+
+  /* Tags */
+  .tag-heritage  { @apply bg-amber-100 text-amber-800 text-xs px-2 py-0.5 rounded font-medium; }
+  .tag-nature    { @apply bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded font-medium; }
+  .tag-adventure { @apply bg-orange-100 text-orange-800 text-xs px-2 py-0.5 rounded font-medium; }
+  .tag-spiritual { @apply bg-purple-100 text-purple-800 text-xs px-2 py-0.5 rounded font-medium; }
+  .tag-beach     { @apply bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded font-medium; }
+  .tag-wildlife  { @apply bg-teal-100 text-teal-800 text-xs px-2 py-0.5 rounded font-medium; }
+  .tag-food      { @apply bg-red-100 text-red-800 text-xs px-2 py-0.5 rounded font-medium; }
+
+  /* Crowd dots */
+  .crowd-high     { @apply w-2 h-2 rounded-full bg-red-500 inline-block; }
+  .crowd-moderate { @apply w-2 h-2 rounded-full bg-orange-400 inline-block; }
+  .crowd-low      { @apply w-2 h-2 rounded-full bg-green-500 inline-block; }
+
+  /* Category pill buttons */
+  .cat-pill {
+    @apply flex items-center gap-1.5 px-4 py-2 rounded-full border border-gray-200 bg-white text-sm font-medium text-gray-700 hover:border-[#1a3d2e] hover:text-[#1a3d2e] transition-all cursor-pointer whitespace-nowrap;
+  }
+  .cat-pill.active {
+    @apply bg-[#1a3d2e] text-white border-[#1a3d2e];
+  }
+
+  /* Section headings */
+  .section-label {
+    @apply text-xs font-semibold tracking-widest text-gray-400 uppercase;
+  }
+  .section-title {
+    @apply text-2xl font-bold text-gray-900 mt-1;
+  }
+
+  /* Alert bar */
+  .alert-bar {
+    @apply bg-[#f8f8f5] border-b border-gray-200 text-sm text-gray-700 px-6 py-2.5 flex items-center gap-3;
+  }
+
+  /* Info banner */
+  .info-banner {
+    @apply bg-[#e8f4ee] border border-[#b7dfc9] text-[#1a4d35] text-sm px-5 py-3 rounded-lg flex items-start gap-2.5;
+  }
+
+  /* Form inputs */
+  .form-input {
+    @apply w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#2d6a4f]/30 focus:border-[#2d6a4f] transition-all;
+  }
+  .form-select {
+    @apply w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#2d6a4f]/30 focus:border-[#2d6a4f] transition-all appearance-none;
+  }
+
+  /* Division card */
+  .division-card {
+    @apply bg-white border border-gray-200 rounded-xl p-5 hover:border-[#2d6a4f] hover:shadow-md transition-all cursor-pointer;
+  }
+
+  /* Crowd card */
+  .crowd-card {
+    @apply bg-white border border-gray-200 rounded-xl p-5;
+  }
+}
+
+/* AI Companion widget */
+.ai-companion-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  background: #1a3d2e;
+  color: white;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(26, 61, 46, 0.4);
+  cursor: pointer;
+  border: none;
+}
+.ai-companion-btn:hover {
+  background: #145236;
+}
+
+/* SOS button in nav */
+.sos-btn {
+  background: #c0392b;
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  letter-spacing: 0.03em;
+  border: none;
+  cursor: pointer;
+}
+.sos-btn:hover { background: #a93226; }
+
+/* Scrolling ticker animation */
+@keyframes ticker {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Page bg pattern  */
+.page-bg {
+  background-color: #f5f5f0;
+  min-height: calc(100vh - 64px);
+}
+
+/* Festival card */
+.festival-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* Map placeholder */
+/* Map container & Leaflet fixes */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 10 !important;
+  font-family: inherit;
+}
+
+.custom-map-marker {
+  background: transparent;
+  border: none;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.realtime-search-pin {
+  background: transparent;
+  border: none;
+}
+
+.map-panel {
+  background: #e8ede6;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
